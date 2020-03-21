@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -31,12 +31,12 @@
  * M412: Enable / Disable filament runout detection
  */
 void GcodeSuite::M412() {
-  if (parser.seen("HS"
+  if (parser.seen("RS"
     #ifdef FILAMENT_RUNOUT_DISTANCE_MM
       "D"
     #endif
     #if ENABLED(HOST_ACTION_COMMANDS)
-      "R"
+      "H"
     #endif
   )) {
     #if ENABLED(HOST_ACTION_COMMANDS)

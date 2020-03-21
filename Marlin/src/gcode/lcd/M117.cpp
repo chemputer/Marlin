@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -28,6 +28,9 @@
  */
 void GcodeSuite::M117() {
 
-  ui.set_status(parser.string_arg);
+  if (parser.string_arg && parser.string_arg[0])
+    ui.set_status(parser.string_arg);
+  else
+    ui.reset_status();
 
 }
