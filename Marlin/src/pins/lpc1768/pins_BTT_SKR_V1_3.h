@@ -93,6 +93,10 @@
   #define Z_MIN_PROBE_PIN  P1_24
 #endif
 
+// Filament Runout Sensor on Z_MAX_PIN
+#ifndef FIL_RUNOUT_PIN
+  #define FIL_RUNOUT_PIN P1_24 //Z_MAX_PIN
+#endif
 //
 // Filament Runout Sensor
 //
